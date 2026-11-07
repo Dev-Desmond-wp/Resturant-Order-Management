@@ -8,6 +8,7 @@ const app = express();
 app.use(express.json());
 
 
+
 const DBconnection = async () => {
     try {
         await sequelize.authenticate();
