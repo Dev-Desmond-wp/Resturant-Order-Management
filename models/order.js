@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
         onUpdate:"CASCADE",
         onDelete:"CASCADE"
       })
-      order.belongsToMany(models.order, {
+      order.belongsToMany(models.foodItems, {
         through: "orderItems",
         onUpdate:"RESTRICT",
         onDelete:"CASCADE"
@@ -32,7 +32,7 @@ module.exports = (sequelize, DataTypes) => {
         defaultValue:DataTypes.UUIDV4
       },
       status: {
-        type: DataTypes.ENUM('Pending', 'Preparing', 'Ready', Delivered),
+        type: DataTypes.ENUM('Pending', 'Preparing', 'Ready', "Delivered"),
       allownull:false
       },
       totalprice: {
