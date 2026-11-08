@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
         onUpdate:"CASCADE",
         onDelete:"CASCADE"
       })
-      order.belongsToMany(models.order, {
+      order.belongsToMany(models.foodItems, {
         through: "orderItems",
         onUpdate:"RESTRICT",
         onDelete:"CASCADE"
