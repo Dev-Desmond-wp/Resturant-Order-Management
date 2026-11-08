@@ -3,8 +3,11 @@ require('dotenv').config();
 const PORT = process.env.PORT
 const sequelize = require('./database/database');
 const foodItemsRouter = require('./routes/Router_foodItems')
-const app = express(foodItemsRouter);
+
+const app = express()
+
 app.use(express.json());
+app.use(foodItemsRouter)
 
 
 
