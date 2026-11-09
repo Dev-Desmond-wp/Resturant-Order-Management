@@ -2,13 +2,10 @@ const express = require('express');
 require('dotenv').config();
 const PORT = process.env.PORT
 const sequelize = require('./database/database');
-const foodItemsRouter = require('./routes/Router_foodItems')
-
-const app = express()
+const customerRouter = require("./routes/customerRouter")
 
 app.use(express.json());
-app.use(foodItemsRouter)
-
+app.use(customerRouter)
 
 
 const DBconnection = async () => {
