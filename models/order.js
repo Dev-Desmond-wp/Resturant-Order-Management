@@ -32,8 +32,8 @@ module.exports = (sequelize, DataTypes) => {
         defaultValue:DataTypes.UUIDV4
       },
       status: {
-        type: DataTypes.ENUM('Pending', 'Preparing', 'Ready', 'Delivered'),
-        allowNull: false
+        type: DataTypes.ENUM('Pending', 'Preparing', 'Ready', "Delivered"),
+      allownull:false
       },
       totalprice: {
         type: DataTypes.INTEGER,
