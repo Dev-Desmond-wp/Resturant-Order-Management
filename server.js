@@ -4,6 +4,7 @@ const PORT = process.env.PORT
 const sequelize = require('./database/database');
 const customerRouter = require("./routes/customerRouter")
 
+const app = express();
 app.use(express.json());
 app.use(customerRouter)
 
