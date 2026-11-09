@@ -2,19 +2,28 @@ const express = require('express');
 const router = express.Router();
 
 const {
-    createOrder,
-    getAllOrders,
-    getSingleOrder,
-    updateOrder,
-    deleteOrder
-} = require('../controller/controllerorder');
-
+    createOrderItem,
+    getAllOrderItem,
+    getSingleOrderItem,
+    updateOrderItem,
+    deleteOrderItem
+} = require('../controller/controllerorderitems');
+ 
 const { validateOrderItem } = require('../middleware/validatororderitems');
 
-router.post('/orders', validateOrderItem, createOrder);
-router.get('/orders', getAllOrders);
-router.get('/orders/:id', getSingleOrder);
-router.put('/orders/:id', updateOrder);
-router.delete('/orders/:id', deleteOrder);
+router.post('/orderitem', validateOrderItem, createOrderItem);
+router.get('/orderitem', getAllOrderItem);
+router.get('/orderitem/:id', getSingleOrderItem);
+router.put('/orderitem/:id', updateOrderItem);
+router.delete('/orderitem/:id', deleteOrderItem);
+
+
+
+
+
+
+
+
+
 
 module.exports = router;
