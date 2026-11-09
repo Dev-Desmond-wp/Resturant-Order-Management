@@ -1,9 +1,9 @@
 const Joi = require('joi');
 
-// RegExp for UUID version 4
+
 const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 
-// CREATE ORDER VALIDATION
+
 const orderSchema = Joi.object({
     customerId: Joi.string()
         .pattern(uuidRegex)
@@ -27,7 +27,7 @@ const orderSchema = Joi.object({
         .default('Pending')
 });
 
-// VALIDATION MIDDLEWARE
+
 const validateOrder = (req, res, next) => {
     const { error, value } = orderSchema.validate(req.body, {
         abortEarly: false

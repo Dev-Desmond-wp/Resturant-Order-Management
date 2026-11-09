@@ -3,7 +3,6 @@ require('dotenv').config();
 const PORT = process.env.PORT
 const sequelize = require('./database/database');
 
-
 const app = express();
 app.use(express.json());
 
