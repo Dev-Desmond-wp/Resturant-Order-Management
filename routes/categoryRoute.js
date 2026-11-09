@@ -6,11 +6,11 @@ const { validateCategory } = require('../middleware/categoryValidator');
 
 const { createCategory, getAllCategories, getOnecategory, updatecategory,deleteCategory } = require('../controller/categoryController');
 
-router.post('category/newcategory', validateCategory, createCategory);
+router.post('/category/newcategory', validateCategory, createCategory);
 
-router.get('category/allcategories', getAllCategories);
+router.get('/category/allcategories', getAllCategories);
 
-router.get('category/getone/:id', getOnecategory);
+router.get('/category/getone/:id', getOnecategory);
 
 router.put('/category/update/:id', updatecategory);
 

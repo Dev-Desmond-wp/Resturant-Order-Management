@@ -1,10 +1,10 @@
-const { category, foodItems } = require('../models');
+const { categories, foodItems } = require('../models');
 
 const createCategory = async (req, res) => {
     try {
         const { name, description } = req.body;
 
-        const newCategory = await category.create({
+        const newCategory = await categories.create({
             name,
             description
         })
@@ -23,7 +23,7 @@ const createCategory = async (req, res) => {
 
 const getAllCategories = async (req, res) => {
     try {
-        const categories = await category.findAll();
+        const categories = await categories.findAll();
         res.status(200).json({
             message: 'Categories found successfully',
             data: categories
@@ -39,7 +39,7 @@ const getAllCategories = async (req, res) => {
 const getOnecategory = async (req, res) => {
     try {
         const { id } = req.params;
-        const onecategory = await category.findByPk(id,{
+        const onecategory = await categories.findByPk(id,{
             attributes: ['name', 'description'],
             include: {
                 model: foodItems,
@@ -71,7 +71,7 @@ const updatecategory = async (req, res) => {
         const { id } = req.params;
         const { name, description } = req.body;
 
-        const CAT = await category.findByPk({where: {id}});
+        const CAT = await categories.findByPk({where: {id}});
     if (!update) {
         return res.status(404).json({
             message: 'Category not found'
@@ -98,7 +98,7 @@ const deleteCategory = async (req, res) => {
     try {
         const { id } = req.params;
 
-        const deleteCAT = await category.findOne({where: {id}});
+        const deleteCAT = await categories.findOne({where: {id}});
 
         if(!deleteCAT) {
             return res.status(404).json({
